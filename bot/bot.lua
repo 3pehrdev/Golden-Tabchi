@@ -225,11 +225,11 @@ function load_config( )
 end
 -- Create a basic config.json file and saves it.
 function create_config( )
-io.write('\nEnter Sudo ID : ')
+io.write('\n\27[1m Enter Sudo ID : \27[0;39;49m')
 local sudo = tonumber(io.read())
 	
-io.write('\nEnter Your API Helper Token : ')
-local apit = tonumber(io.read())
+io.write('\27[1m Enter Your API Helper Token: \27[0;39;49m')
+local api_token = io.read()
 	
   config = {
     enabled_plugins = {
@@ -238,7 +238,7 @@ local apit = tonumber(io.read())
 	"id",
     },
     sudo_users = {sudo,1},--Sudo users
-    api_token = {apit}
+    api_key = {api_token}
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
