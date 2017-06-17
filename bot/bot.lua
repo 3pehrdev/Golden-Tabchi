@@ -229,7 +229,8 @@ io.write('\n\27[1m Enter Sudo ID : \27[0;39;49m')
 local sudo = tonumber(io.read())
 	
 io.write('\27[1m Enter Your API Helper Token: \27[0;39;49m')
-local api_token = io.read()
+
+local bot_api_key = io.read()
 	
   config = {
     enabled_plugins = {
@@ -238,7 +239,12 @@ local api_token = io.read()
 	"id",
     },
     sudo_users = {sudo,1},--Sudo users
-    api_key = {api_token}
+        bot_api = {
+      key = bot_api_key,
+      master = our_id,
+      uid = botid.id,
+      uname = botid.username
+},
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
