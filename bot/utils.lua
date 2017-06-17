@@ -1281,6 +1281,7 @@ function get_receiver_api(msg)
 end
 
 function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,inline_text,inline_url)
+ local config = loadfile ("./data/config.lua")()
  for v,user in pairs(_config.api_token) do
  local api_key = user
  local url_api = 'https://api.telegram.org/bot'..api_key..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
