@@ -237,7 +237,7 @@ local api_key = tonumber(io.read())
     "tabchi"
     },
     sudo_users = {sudo,1},--Sudo users
-    api_token = {api_key},
+    api_token = {api_key}
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
