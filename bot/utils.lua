@@ -1281,10 +1281,14 @@ function get_receiver_api(msg)
 end
 
 function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,inline_text,inline_url)
- local url_api = 'https://api.telegram.org/bot385592133:AAEI78ixi2NaenILUkisY2cXM6Iwj6rVbFU/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
+local config = loadfile ("./data/config.lua")()
+for v,user in pairs(config.api_key) do
+ local url_api = 'https://api.telegram.org/bot'..user..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
   if disable_web_page_preview == true then
     url_api = url_api..'&disable_web_page_preview=true'
   end
+ return config
+	end
   if markdown == 'md' then
     url_api = url_api..'&parse_mode=Markdown'
   elseif markdown == 'html' then
