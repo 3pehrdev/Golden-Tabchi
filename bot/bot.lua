@@ -234,7 +234,8 @@ local api_key = tonumber(io.read())
   config = {
     enabled_plugins = {
 	"botmanager",
-    "tabchi"
+    "tabchi",
+	"id",
     },
     sudo_users = {sudo,1},--Sudo users
     api_token = {api_key}
