@@ -1287,7 +1287,6 @@ for v,user in pairs(config.api_key) do
   if disable_web_page_preview == true then
     url_api = url_api..'&disable_web_page_preview=true'
   end
- return config
 	end
   if markdown == 'md' then
     url_api = url_api..'&parse_mode=Markdown'
