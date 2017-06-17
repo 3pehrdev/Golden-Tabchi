@@ -1282,7 +1282,7 @@ end
 
 function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,inline_text,inline_url)
 	local config = loadfile ("./data/config.lua")()
- local url_api = 'https://api.telegram.org/bot'.._config.api_key..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
+ local url_api = 'https://api.telegram.org/bot'..config.api_key..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
   if disable_web_page_preview == true then
     url_api = url_api..'&disable_web_page_preview=true'
 	end
