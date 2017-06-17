@@ -223,12 +223,6 @@ function load_config( )
   end
   return config
 end
-
- local config = loadfile ("./data/config.lua")()
-  for v,user in pairs(config.api_token) do
-    print("API Helper Token: " .. user)
-  return config
-end
 -- Create a basic config.json file and saves it.
 function create_config( )
 io.write('\nEnter Sudo ID : ')
