@@ -1281,12 +1281,9 @@ function get_receiver_api(msg)
 end
 
 function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,inline_text,inline_url)
-	for v,user in pairs(_config.api_key) do
- local url_api = 'https://api.telegram.org/bot'..user..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
+ local url_api = 'https://api.telegram.org/bot'.._config.api_key..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
   if disable_web_page_preview == true then
     url_api = url_api..'&disable_web_page_preview=true'
-return config
-  end
 	end
   if markdown == 'md' then
     url_api = url_api..'&parse_mode=Markdown'
