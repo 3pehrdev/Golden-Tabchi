@@ -222,10 +222,11 @@ function load_config( )
     print("Sudo user: " .. user)
   end
   return config
+end
+
  local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.api_token) do
     print("API Helper Token: " .. user)
-  end
   return config
 end
 -- Create a basic config.json file and saves it.
