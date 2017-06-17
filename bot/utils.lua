@@ -1285,6 +1285,7 @@ function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,in
  local url_api = 'https://api.telegram.org/bot'..user..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
   if disable_web_page_preview == true then
     url_api = url_api..'&disable_web_page_preview=true'
+return config
   end
 	end
   if markdown == 'md' then
